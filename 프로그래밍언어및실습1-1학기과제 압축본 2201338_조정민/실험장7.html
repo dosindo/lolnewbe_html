@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html style="scroll-behavior:smooth;">
+  <head>
+    <meta charset="utf-8"/>
+    <!-- 모바일 대응을 위한 뷰포트 기본 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>라인별 할일</title>
+    <style>
+        @keyframes ud {
+      0% {transform: translate(0px,20px);}
+      50% {transform: translate(0px,-20px);}
+      100% {transform: translate(0px,20px);}
+    }
+      body { margin: 0px; 
+      height: 100%;
+      text-decoration: none;
+    }
+    ul{
+      list-style-position:inside ;
+      list-style-type: circle;
+    }
+      
+      #head {
+        background-color: #ffeb3b;
+        height: 120vh;
+        padding: 100px;
+         overflow: hidden;
+      }
+      
+      #head div{
+      display: inline-block;
+      width: 19%;
+      text-align: center;
+      padding-top: 10%;
+      padding-bottom: 10%;
+      border-radius: 30px;
+      animation: ud 3s infinite;
+    }
+
+      /* Scroll Animation (sa, 스크롤 애니메이션) */
+      .sa {
+        opacity: 0;
+        transition: all .5s ease;
+      }
+      .hd {
+        opacity: 0;
+        transition: all .5s ease;
+      }
+     
+      .sa-right {
+        transform: translate(-100px, 0);
+      }
+      
+      .sa-left {
+        transform: translate(100px, 0);
+      }
+      
+      .sa-rotateL {
+        transform: rotate(180deg);
+      }
+      
+      .sa-rotateR {
+        transform: rotate(-180deg);
+      }
+     
+      .sa-scaleUp {
+        transform: scale(.5);
+      }
+      .sa.show {
+        opacity: 1;
+        transform: none;
+      }
+      #head .hd.show {
+        opacity: 1;
+        transform: none;
+        animation: ud 3s infinite;
+      }
+      #head .hd.show:hover{
+      opacity: 0.5;
+    }
+    #head .hd.show:active{
+      opacity: 0.8;
+    }
+    * { box-sizing: border-box; } /*테두리포함크기로만들어줌*/
+section {
+        display: flex;
+      }
+
+      #topsec div div {
+        width: 100%;
+        height: 25vh;
+        text-align: center;
+        padding-top: 12vh;
+
+
+      }
+      #jgsec div div {
+        width: 100%;
+        height: 50vh;
+        text-align: center;
+        padding-top: 25vh;
+      }
+      #mdsec div div {
+        width: 100%;
+        height: 33.3333333333vh;
+        text-align: center;
+        padding-top: 16vh;
+      }
+      #adsec div div {
+        width: 100%;
+        height: 33.3333333333vh;
+        text-align: center;
+        padding-top: 16vh;
+      }
+      #spsec div div {
+        width: 100%;
+        height: 25vh;
+        text-align: center;
+        padding-top: 12vh;
+
+      }
+      .sc{
+        width: 60%;
+      }
+      .exh{
+        margin:5vh auto;
+        width: 30%;
+        height: 15vh;
+        background-color: #AFC4E7;
+        border-radius: 30px;
+        text-align: center;
+        padding-top: 6vh;
+      }
+      .exc{
+        margin:8vh auto;
+        width: 80%;
+        height: 15vh;
+        background-color: #AFC4E7;
+        border-radius: 30px;
+        text-align: center;
+        padding-top: 2vh;
+      }
+      .pack{
+        width: 100%;
+        height: 100vh;
+      }
+
+    </style>
+  </head>
+  <body>
+    <a href="#head"><img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/화살표.png" alt="" style="margin:  50px; position: fixed; width:50px; height: 50px; z-index:100; border-radius: 30px; bottom: 30px; right:30px;"></a>
+    <a href="90퍼완성 메인화면10.html"><img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/메뉴버튼.png" style="width: 50px; height: 50px; float: left; position:fixed; margin: 10px; z-index:100;"></a>
+    <div id="head">
+      <header><h1>라인별 할일</h1></header>
+      <br><br><br><br><br><br><br><br><br>
+      <a href="#topsec"><div class="hd"style="background-color:#EE4a5d">탑</div></a>
+        <a href="#jgsec"><div class="hd" style="background-color:#FFF77F">정글</div></a>
+        <a href="#mdsec"><div class="hd" style="background-color:#AFC4E7">미드</div></a>
+        <a href="#adsec"><div class="hd" style="background-color:#BAE7AF">원딜</div></a>
+        <a href="#spsec"><div class="hd" style="background-color:#ACB890">서폿</div></a>
+
+    </div>
+      <section id="topsec">
+        <div class="sa sa-right" style="background-color:#EE4a5d;width: 40%; height: 100vh; text-align: center; padding-top: 40vh; font-size: 100px;">탑</div>
+        <div class="sc">
+          <a href="#p1"><div class="sa sa-left" style="background-color:#afffba;">사 나 이</div></a>
+          <a href="#p2"><div class="sa sa-rotateL" style="background-color:#f2cfa5;">상대를 농락하는 야비한스타일</div></a>
+          <a href="#p3"><div class="sa sa-rotateR" style="background-color:#caa6fe;">초반에 강하게 밀어붙여 후반까지 밀고가는 스타일</div></a>
+          <a href="#p4"><div class="sa sa-scaleUp" style="background-color:#ffafd8;">라인전은 죽지 않게만 버티고 후반 교전에서 범위기술 등으로 승리를 점하는 스타일</div></a></div>
+      </section>
+      <section id="jgsec">
+        <div class="sa sa-right" style="background-color:#FFF77F;width: 40%; height: 100vh; text-align: center; padding-top: 40vh; font-size: 100px;">정글</div>
+        <div class="sc">
+         <a href="#p5"> <div class="sa sa-left" style="background-color: #caa6fe;">무한 갱으로 우리팀을 케어해 주고 본인도 성장하는 육식</div></a>
+         <a href="#p6"> <div class="sa sa-left"style="background-color: #dfd4e4;">갱을 줄이고 중립 몬스터를 잡으며성장해 후반에 활약하는 초식</div></a>
+        </div>
+      </section>
+      <section id="mdsec">
+        <div class="sa sa-right" style="background-color:#AFC4E7;width: 40%; height: 100vh; text-align: center; padding-top: 40vh; font-size: 100px;">미드</div>
+       </div>
+           <a href="#p7"><div class="sc"><div class="sa sa-left" style="background-color: #ffddf6;">내 라인보다는 팀원의 라인에서 킬을 올리며 팀원을 풀어주고 성장하는 로밍챔</div>
+<a href="#p8"><div class="sa sa-left" style="background-color: #ddffff;">게임은 상대방 빡치라고 하는것! 포킹챔</div></a>
+<a href="#p9"><div class="sa sa-left" style="background-color: #ffe5dd;">게임은 농사를 위한것. 성장챔</div></a>
+
+        </div>
+      </section>
+
+      <section id="adsec">
+        <div class="sa sa-right" style="background-color:#BAE7AF;width: 40%; height: 100vh; text-align: center; padding-top: 40vh; font-size: 100px;">원딜</div>
+        <div class="sc">
+          <a href="#p10"><div class="sa sa-left" style="background-color: #e5ffdd;">불꽃 카이팅! 빠르고 강한 일반공격으로 상대방을 잡아내는 스타일</div></a>
+<a href="#p11"><div class="sa sa-left" style="background-color: #ddeeff;">평타에 더불어 강력한 스킬으로 우위를 점하는 스타일</div></a>
+<a href="#p12"><div class="sa sa-left" style="background-color: #ffdddd;">나 원딜 아니다
+</div></a>
+        </div>
+      </section>
+
+      <section id="spsec">
+        <div class="sa sa-right" style="background-color:#ACB890;width: 40%; height: 100vh; text-align: center; padding-top: 40vh; font-size: 100px;">서폿</div>
+        <div class="sc">
+          <a href="#p13"><div class="sa sa-left" style="background-color: #e5ffdd;">상대방을 잡아내는 것이 곧 아군을 보호하는 일!</div></a>
+<a href="#p14"><div class="sa sa-left" style="background-color: #dde5ff;">아군 원딜을 죽지않게 유지하고 최대한 아군을 키우는 어머니같은 스타일</div></a>
+<a href="#p15"><div class="sa sa-left" style="background-color: #fff6dd;">상대방의 이동을 방해하고 아군 원딜과 함께 잡아내는 든든한 스타일</div></a>
+<a href="#p16"><div class="sa sa-left" style="background-color: #ffdde5;">원딜따윈 필요없다. 다른라인을 키우는 것이 곧 승리!</div></a>
+
+        </div>
+      </section>
+      <div id="ec" style="background-image: url('프로그래밍언어및실습_1-1학기과제-사진파일모음\\icon-rainbow-flufts.jpg'); width: 100%; height: 1600vh; z-index:-2;background-attachment: fixed; background-size: 100%100%; background-repeat: no-repeat; margin:0px;">
+        <div style="background-color:rgba(0, 0, 0, 0.8);width: 100%; height: 1600vh; z-index:-1; background-attachment: fixed; color: white;">
+          <div class="pack" id="p1"><br><div class="exh">사나이</div><br><ul><div class="exc"><li>탑을 1vs1 투기장으로 생각하고 정글의 개입을 사나이답지 않은 행위라고 생각한다. 보통 1대 다수가 굉장히 센 챔피언이라 상대 정글이 오더라도 개의치 않고 2vs1을 이겨낼 수 있는 능력을 가지고있다.</li></div><div class="exc"><li>다른 라인이 라인전이 끝난 이후에도 계속 탑에서 우직하게 타워를 밀면서 막으러 오는 챔피언들을 잡아내며 성장하는게 대표적인 성장 플랜.</li></div><div class="exc">
+          <li>다리우스, 올라프, 세트 등이 여기에 포함된다.</li></div></ul></div>
+
+          <div class="pack" id="p2"><br><div class="exh">상대를 농락하는 야비한스타일</div><br><ul><div class="exc"><li>상대방과 거리를 두고 체력을 야금야금 앗아가는 특징을 가지고 있다. 원거리에서 공격할 수 있다는 특징을 가지고있기 때문에 후반 잠재력도 굉장히 높다. 하지만 상대 정글의 개입에 취약하므로 와드를 사용해 상대 정글의 동향을 잘 파악해야 한다.</li></div><div class="exc"><li>이동기를 가지고 있거나 기동력이 뛰어나서 본인은 맞지않고 상대방을 원거리 공격으로 안전하게 공격하여 이기적인 딜교를 시전하는 게 대표적인 성장 플랜.</li></div><div class="exc">
+          <li>티모, 베인, 루시안 등이 여기에 포함된다.</li></div></ul></div>
+
+          <div class="pack" id="p3"><br><div class="exh">초반에 강하게 밀어붙여 후반까지 밀고가는 스타일</div><br><ul><div class="exc"><li>초반에 포킹 혹은 강력한 딜교환으로 체력의 우위를 점하고 라인에서 킬까지 올리는 챔피언</li></div><div class="exc"><li>cc기가 적고 딜이 많은 챔피언이 대부분이므로 초반에 최대한 이득을 땡겨서 라인을 터트리는 것이 대표적인 성장 플랜.</li></div><div class="exc">
+          <li>렝가, 제이스 등이 여기에 포함된다.</li></div></ul></div>
+
+          <div class="pack" id="p4"><br><div class="exh">라인전은 죽지않게만 버티고 후반교전에서 범위기술 등으로 승리를 점하는 스타일</div><br><ul><div class="exc"><li>보통 강력한 범위cc기를 가져서 후반 한타에 도움이 되는 챔피언이다.</li></div><div class="exc"><li>라인전은 대체로 강하지 않으므로 버티다가 후반에 한타를 터트려 킬이나 어시스트를 올리는게 대표적인 성장 플랜.</li></div><div class="exc">
+          <li>말파이트, 마오카이 등이 여기에 포함된다.</li></div></ul></div>
+          <div class="pack" id="p5"><br><div class="exh">무한 갱으로 우리팀을 케어해주고 본인도 성장하는 육식</div><br><ul><div class="exc"><li>초반에 강력하고 정글링이 빠른 챔피언들이 대부분이다.</li></div><div class="exc"><li>강력한 갱킹능력으로 초반부터 계속 아군을 지원해주면서 라인에서 킬을 올리는게 대표적인 성장 플랜.</li></div><div class="exc">
+          <li>신짜오, 리신 등이 여기에 포함된다.</li></div></ul></div>
+
+           <div class="pack" id="p6"><br><div class="exh">갱을 줄이고 중립 몬스터를 잡으며성장해 후반에 활약하는 초식</div><br><ul><div class="exc"><li>초반엔 약해도 후반에 강한 힘을 발위하는 챔피언들이 대부분.</li></div><div class="exc"><li>초반에는 상대방의 카정을 조심하고 안전하게 성장하고 후반에 킬을 올리거나 강한 cc기로 한타를 터트리는게 대표적인 성장 플랜.</li></div><div class="exc">
+          <li>카서스, 세주아니 등이 여기에 포함된다.</li></div></ul></div>
+
+          <div class="pack" id="p7"><br><div class="exh">내 라인보다는 팀원의 라인에서 킬을 올리며 팀원을 풀어주고 성장하는 로밍챔</div><br><ul><div class="exc"><li>기동력이 좋아서 여러 라인을 빠르게 다닐 수 있는 챔피언.</li></div><div class="exc"><li>라인을 최대한 밀고 빠르게 다른 라인에서 수적우위를 이용해 킬을 올리는게 대표적인 성장 플랜.</li></div><div class="exc">
+          <li>탈론, 탈리야, 아리 등이 여기에 포함된다.</li></div></ul></div>
+
+
+           <div class="pack" id="p8"><br><div class="exh">게임은 상대방 빡치라고 하는것! 포킹챔</div><br><ul><div class="exc"><li>상대와 거리를 두며 긴 사거리의 스킬을 이용해 본인은 맞지않고 상대만 맞는 딜교를 시전하는 챔피언.</li></div><div class="exc"><li>초반부터 계속 딜교를 시도해서 상대방 체력을 빼놓고 체력 차이가 날때 갱을 부르거나 솔킬을 내는것이 대표적인 성장 플랜.</li></div><div class="exc">
+          <li>조이, 제라스 등이 여기에 포함된다.</li></div></ul></div>
+
+          <div class="pack" id="p9"><br><div class="exh">게임은 농사를 위한것. 성장챔</div><br><ul><div class="exc"><li>초반에는 죽지 않게만 버티고 후반의 매우 강한 캐리력으로 게임을 승리로 이끄는 챔피언</li></div><div class="exc"><li>초반에는 그냥 버티면서 cs만 잘 챙기며 무난히 성장해 후반까지 기다리는게 대표적인 성장 플랜.</li></div><div class="exc">
+          <li>베이가, 카사딘 등이 여기에 포함된다.</li></div></ul></div>
+
+          <div class="pack" id="p10"><br><div class="exh">불꽃 카이팅! 빠르고 강한 일반공격으로 상대방을 잡아내는 스타일</div><br><ul><div class="exc"><li>강하고 빠른 일반공격을 이용해 상대방을 잡아내는 챔피언이 대부분.</li></div><div class="exc"><li>초반에는 약한 경우가 많으므로 긴 사거리로 후반까지 버텨야 한다. 후반에는 상대방과 거리를 유지하고 일반공격을 하는 카이팅을 사용하는 것이 놓다.</li></div><div class="exc">
+          <li>징크스, 코그모 등이 여기에 포함된다.</li></div></ul></div>
+
+          <div class="pack" id="p11"><br><div class="exh">평타에 더불어 강력한 스킬으로 우위를 점하는 스타일</div><br><ul><div class="exc"><li>평타만큼 강력하고 사거리가 긴 스킬을 이용해 딜을 하는 챔피언.</li></div><div class="exc"><li>초반부터 강한 스킬을 이용해 라인을 장악하고 그 성장세를 후반까지 이어가는 것이 성장 플랜</li></div><div class="exc">
+          <li>아펠리오스, 이즈리얼 등이 여기에 포함된다.</li></div></ul></div>
+
+          <div class="pack" id="p12"><br><div class="exh">나 원딜 아니다</div><br><ul><div class="exc"><li>원딜계의 외래종. 평타로 딜을 하는 챔피언들이 아님.</li></div><div class="exc"><li>초반부터 굉장히 강한 라인전으로 원딜들을 학살하며 성장하는 것이 성장플랜. 다만 후반에는 원거리딜러보다 캐리력이 떨어지므로 초반의 성장세를 후반까지 이어가는 것이 중요하다.</li></div><div class="exc">
+          <li>스웨인, 야스오등이 여기에 포함된다.</li></div></ul></div>
+
+           <div class="pack" id="p13"><br><div class="exh">상대방을 잡아내는 것이 곧 아군을 보호하는 일!</div><br><ul><div class="exc"><li>강한 포킹능력으로 적 원딜을 괴롭히고 킬을 올리는 챔피언.</li></div><div class="exc"><li>초반부터 굉장히 강한 라인전으로 원딜들을 학살하며 원딜들을 성장시키는 것이 중요함.</li></div><div class="exc">
+          <li>럭스, 제라스등이 여기에 포함된다.</li></div></ul></div>
+
+          <div class="pack" id="p14"><br><div class="exh">아군 원딜을 죽지 않게 유지하고 최대한 아군을 키우는 어머니 같은 스타일</div><br><ul><div class="exc"><li>준수한 힐과 보호막으로 초반에 약하고 후반에 강한 원딜들의 체력을 유지시켜준다.</li></div><div class="exc"><li>후반에 강한 원딜들의 전성기까지 최대한 버티게 해주며 후반에도 죽지않고 안정적으로 딜을 할 수 있게 돕는다.</li></div><div class="exc">
+          <li>소라카, 잔나등이 여기에 포함된다.</li></div></ul></div>
+
+          <div class="pack" id="p15"><br><div class="exh">상대방의 이동을 방해하고 아군 원딜과 함께 잡아내며 튼튼하고 든든한 스타일</div><br><ul><div class="exc"><li>높은 체력과 방어력으로 딜을 버텨내면서 cc기를 이용해 상대방의 이동을 제한하는 챔피언</li></div><div class="exc"><li>아군 옆에 붙어서 cc기를 이용해 킬을 내는 것을 돕거나 한타때 강한 cc기로 상대방의 이동을 제한하는게 주요 승리플랜</li></div><div class="exc">
+          <li>레오나, 렐등이 여기에 포함된다.</li></div></ul></div>
+
+          <div class="pack" id="p16"><br><div class="exh">원딜따윈 필요없다. 다른라인을 키우는 것이 곧 승리!</div><br><ul><div class="exc"><li>원딜을 버리고 로밍을 가는 유틸성이 높은 스타일.</li></div><div class="exc"><li>여러군데 돌아다니면서 와드를 여기저기 박고 다른 라인을 도와 라인을 터트리는 것이 주요 승리 플랜.</li></div><div class="exc">
+          <li>정해진 챔피언이 없다. 강한 cc기를 가지고 있다면 모두 원딜을 버릴 수 있다.</li></div></ul></div>
+
+
+        </div>
+        </div>
+    
+
+    <script>
+      // Scroll Animation (sa, 스크롤 애니메이션)
+      const hdElementList = document.querySelectorAll('.hd');
+
+      const hdFunc = function() {
+        for (const element of hdElementList) {
+            if (window.innerHeight > element.getBoundingClientRect().top + 400) {
+              element.classList.add('show');
+            }
+          }
+        }
+
+
+      const saElementList = document.querySelectorAll('.sa');
+
+      const saFunc = function() {
+        for (const element of saElementList) {
+            if (window.innerHeight > element.getBoundingClientRect().top) {
+              element.classList.add('show');
+            }
+          }
+        }
+
+      window.addEventListener('scroll', hdFunc);
+      window.addEventListener('scroll', saFunc);
+
+
+    </script>
+  </body>
+</html>

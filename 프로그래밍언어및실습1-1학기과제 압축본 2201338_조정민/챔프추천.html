@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>챔프 추천</title><link rel="stylesheet" href="메뉴css.css">
+	<style>
+		.ret{
+			background: skyblue;
+			border-radius: 40px 40px 40px 40px;
+			text-align: center;
+			display: table-cell;
+        	vertical-align: middle;
+			width: 200px;
+			height: 100px;
+			margin: 20px;
+			float: left;
+			cursor: pointer;
+		}
+		.cb{
+			font-weight: bold;
+			color: white;
+		}
+
+		.ret:hover {
+			opacity: 0.5;
+		}
+
+		.ret:active {
+			transform: skew(10deg);
+		}
+
+		.cham {
+			display: none;
+			text-align: center;
+			background-image: url("프로그래밍언어및실습_1-1학기과제-사진파일모음/포로 아이콘.png");
+			background-size : 20% 22%;
+			background-repeat: repeat;
+			height: 1800px;
+		}
+		.chamn {
+			width: 40%;
+			background-color: greenyellow;
+			margin:0 auto; 
+			height: 50px;
+			border-radius: 30px;
+		}
+		span {
+			color: hotpink;
+		}
+		.chamdiv {
+			width:70%; margin: 60px auto; border: 5px solid greenyellow; background-color: greenyellow;
+			border-radius: 20px;
+		}
+		.intr {
+			border: 5px solid greenyellow; width: 90%;margin: 0 auto; height: auto; font-size: 20px; background-color:yellowgreen;
+		}
+		h1 {
+			text-shadow: 1px 1px 1px;
+		}
+		body{
+			margin: 0px;
+		}
+		.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #f00;
+  border: 2px solid orange;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.button:hover {
+  background: orange;
+  color: #fff;
+}
+
+.overlay {
+  position: absolute;
+  top: -300px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);  
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+  top:0px;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  
+}
+.popup .close:hover {
+  color: orange;
+  transform: rotate(90deg);
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+	</style>
+
+	<script>
+var x = "엥뭐지";
+var fin = "";
+var q=0;
+function showX() {
+    if (x==0) {
+      fin=fin+"0";
+      q+=1;
+    }
+    else if (x==1) {
+      fin=fin+"1";
+      q+=1;
+    }
+    if (q==1) {
+    document.getElementById("poro1").style.display = "none";
+    document.getElementById("poro11").style.display = "none";
+    document.getElementById("poro111").style.display = "none";
+    document.getElementById("poro1111").style.display = "none";
+    document.getElementById("poro2").style.display = "block"
+    document.getElementById("poro22").style.display = "block"
+    document.getElementById("poro222").style.display = "block"
+    document.getElementById("poro2222").style.display = "block"
+  }
+  	else if (q==2){
+  	document.getElementById("poro2").style.display = "none";
+    document.getElementById("poro22").style.display = "none";
+    document.getElementById("poro222").style.display = "none";
+    document.getElementById("poro2222").style.display = "none";
+    document.getElementById("poro3").style.display = "block"
+    document.getElementById("poro33").style.display = "block"
+    document.getElementById("poro333").style.display = "block"
+    document.getElementById("poro3333").style.display = "block"
+  	}
+  	else if (q==3){
+  	document.getElementById("poro3").style.display = "none";
+    document.getElementById("poro33").style.display = "none";
+    document.getElementById("poro333").style.display = "none";
+    document.getElementById("poro3333").style.display = "none";
+    document.getElementById("poro4").style.display = "block"
+    document.getElementById("poro44").style.display = "block"
+    document.getElementById("poro444").style.display = "block"
+    document.getElementById("poro4444").style.display = "block"
+  	}
+  	else{
+	document.getElementById("poro4").style.display = "none";
+    document.getElementById("poro44").style.display = "none";
+    document.getElementById("poro444").style.display = "none";
+    document.getElementById("poro4444").style.display = "none";
+    champ();
+	}
+	
+    }
+    function champ() {
+    	if (fin=="0000") {
+    		document.getElementById("c0000").style.display = "block"
+
+    	}
+    	else if (fin=="0001") {
+    		document.getElementById("c0001").style.display = "block"
+
+    	}
+    	else if (fin=="0010") {
+    		document.getElementById("c0010").style.display = "block"
+
+    	}
+
+    	else if (fin=="0011") {
+    		document.getElementById("c0011").style.display = "block"
+
+    	}
+
+    	else if (fin=="0100") {
+    		document.getElementById("c0100").style.display = "block"
+
+    	}
+    	else if (fin=="0101") {
+    		document.getElementById("c0101").style.display = "block"
+
+    	}
+    	else if (fin=="0110") {
+    		document.getElementById("c0110").style.display = "block"
+
+    	}
+    	else if (fin=="0111") {
+    		document.getElementById("c0111").style.display = "block"
+
+    	}
+    	else if (fin=="1000") {
+    		document.getElementById("c0100").style.display = "block"
+
+    	}
+    	else if (fin=="1001") {
+    		document.getElementById("c1001").style.display = "block"
+
+    	}
+    	else if (fin=="1010") {
+    		document.getElementById("c1010").style.display = "block"
+
+    	}
+    	else if (fin=="1011") {
+    		document.getElementById("c1011").style.display = "block"
+
+    	}
+    	else if (fin=="1100") {
+    		document.getElementById("c1100").style.display = "block"
+
+    	}
+    	else if (fin=="1101") {
+    		document.getElementById("c1101").style.display = "block"
+
+    	}
+    	else if (fin=="1110") {
+    		document.getElementById("c1110").style.display = "block"
+
+    	}
+    	else if (fin=="1111") {
+    		document.getElementById("c1111").style.display = "block"
+
+    	}
+    }
+ function wc1() {
+ 	var inputline = document.getElementById('lineq1').value;
+ 	if (inputline=="미드") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+ function wc2() {
+ 	var inputline = document.getElementById('lineq2').value;
+ 	if (inputline=="원딜") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+ 	 function wc3() {
+ 	var inputline = document.getElementById('lineq3').value;
+ 	if (inputline=="미드") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+ function wc4() {
+ 	var inputline = document.getElementById('lineq4').value;
+ 	if (inputline=="원딜") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+
+function wc5() {
+ 	var inputline = document.getElementById('lineq5').value;
+ 	if (inputline=="정글") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+
+function wc6() {
+ 	var inputline = document.getElementById('lineq6').value;
+ 	if (inputline=="탑") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+
+ function wc7() {
+ 	var inputline = document.getElementById('lineq7').value;
+ 	if (inputline=="미드") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+
+function wc8() {
+ 	var inputline = document.getElementById('lineq8').value;
+ 	if (inputline=="탑") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+
+function wc9() {
+ 	var inputline = document.getElementById('lineq9').value;
+ 	if (inputline=="미드") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+
+function wc10() {
+ 	var inputline = document.getElementById('lineq4').value;
+ 	if (inputline=="원딜") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+
+ function wc11() {
+ 	var inputline = document.getElementById('lineq11').value;
+ 	if (inputline=="정글") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+
+function wc12() {
+ 	var inputline = document.getElementById('lineq12').value;
+ 	if (inputline=="원딜") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+
+ function wc13() {
+ 	var inputline = document.getElementById('lineq13').value;
+ 	if (inputline=="정글") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+
+function wc14() {
+ 	var inputline = document.getElementById('lineq14').value;
+ 	if (inputline=="원딜") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+
+ function wc15() {
+ 	var inputline = document.getElementById('lineq15').value;
+ 	if (inputline=="미드") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+
+ function wc16() {
+ 	var inputline = document.getElementById('lineq16').value;
+ 	if (inputline=="탑") {
+ 		alert("정답입니다");
+ 	}
+ 	else{
+ 		alert("틀렸습니다");
+ 	}
+ }
+	</script>
+</head>
+<body>
+	<a href="90퍼완성 메인화면10.html"><img id="me"style="margin: 10px;" src="프로그래밍언어및실습_1-1학기과제-사진파일모음/메뉴버튼.png"></a>
+<div class="cham" id="c0000">
+	<div class="chamn"><h1>애니, 어둠의아이</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/애니-움짤.gif" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>리그 오브 레전드에 최초로 등장한 집중형 마법사로, 강한 CC와 깡딜을 가진 정통<span>미드</span>챔피언이다.<br>
+Q를 통한 쉬운 <span>마나 관리</span>와 막타, <span>손쉽게 사용 가능한 하드 CC기</span>에서 파생되는 변수 대응과 창출,<br> 준수한 깡딜과 높은 계수 책정에서 비롯된 살인적인 누킹까지, 애니는 미드 메이지에게 필요한 능력과 누커에게 요구되는 자질을 두루 갖추고 있어서<br> 미드 메이지의 교과서적인 챔피언이라 불린다. 고티어로 갈수록 픽률이 점점 낮아지기는 하지만 모든 티어에서 꾸준한 픽률과 준수한 승률을 보이는 챔피언이다.</p>
+<a href="#popup1"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup1" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc1();">
+      	<input type="text" id="lineq1">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div></div>
+
+<div class="cham" id="c0001">
+	<div class="chamn"><h1>트리스타나, 요들 사수</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/animated-dragontrainer-tristana.gif" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>리그 오브 레전드의 초창기 원거리 딜러 챔피언 중 한 명.<br>강력한 이동기와 폭발적인 피해량을 가진 원거리 딜러 중에는 드문 암살자형 챔피언이며, 레벨에 따라 기본 공격의 사거리가 증가하는 효과로 후반에는 긴 사거리의 안정적인 딜링까지 보유하게 된다.</p>
+<a href="#popup2"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup2" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc2();">
+      	<input type="text" id="lineq2">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+
+<div class="cham" id="c0010">
+	<div class="chamn"><h1>탈론, 검의 그림자</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/champion-talon-enduring-sword.jpg" alt="" style="width: 90%; margin: 50px auto;">
+<div class="intr"><p>강력한 순간 누킹 능력과 뛰어난 라인 클리어 능력, 독보적인 기동력을 바탕으로 다른 라인에 개입하거나, 교전을 통해 이득을 굴리는 로밍형 AD 암살자. 주 포지션은 미드였으나, 패치로 정글러로도 사용하게 되었다. 단일 폭딜을 넣는 동시에 광역 딜링도 가능하여 암살자 역할군임에도 준수한 한타 기여도를 가져 전사처럼 운용할 수도 있다. 암살자의 길(E)을 통한 최상의 기동성으로 언제든지 전투에 참여할 수 있고, 대부분의 상대로부터 선공권을 가질 수 있기 때문에 교전을 중요시하는 메타에서 높은 평가를 받는다. 또한 서로간의 소통이 잘 안 되는 솔랭에서는 로밍을 통해 빠르게 타 라인들을 박살낼 수 있기 때문에 메타에 관계없이 대체로 높은 평가를 받는 챔피언이기도 하다.</p>
+<a href="#popup3"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup3" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc3();">
+      	<input type="text" id="lineq3">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+<div class="cham" id="c0011">
+	<div class="chamn"><h1>이즈리얼, 무모한 탐험가</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/animated-battle-academia.gif" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>이즈리얼은 다른 원딜들에 비해 상당히 독특한 챔피언이다. 이즈리얼과 일반적인 원딜들을 구분짓는 가장 큰 특징은, 주 딜링이 기본 공격이 아닌 논타겟 스킬인 신비한 화살(Q)이라는 것이다. 때문에 마법사마냥 스킬 적중 여부에 따른 DPS의 변동이 극심하다.<br>
+	최상급 이동기인 비전 이동(E)을 통한 뛰어난 생존력, 압도적인 사거리를 가진 공격기들과 적중 시 스킬 쿨타임 감소를 가진 신비한 화살(Q) 덕분에 이즈리얼은 원거리 딜러 역할군 중에서도 최상급의 안정성을 보유하고 있다.<br> 이 때문에 상대 원딜보다 빠른 성장을 목표로 해 빠른 타이밍부터 상대를 압박하는 데에 특화된 원거리 딜러로, 포킹과 플레이메이킹 모두에서 확실한 장점이 있기 때문에 가장 무난하게 선픽하기 좋은 원거리 딜러. 그리고 주 포지션이 원거리 딜러라면 누구든지 반드시 마스터해야 하는 챔피언으로 인식이 되어있다.
+<br>
+<br>
+여담으로, 리그 오브 레전드에서 가장 많이 플레이되는 챔피언이다.</p>
+<a href="#popup4"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup4" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc4();">
+      	<input type="text" id="lineq4">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+<div class="cham" id="c0100">
+	<div class="chamn"><h1>신 짜오, 데마시아의 호위무사</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/champion-xinzhao-splash.jpg" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>저돌적이고 공격적인 스킬셋을 가진 AD 브루저. 주 포지션은 정글러로, 초반부터 스노우볼링을 중시하는 대표적인 딜탱형 육식형 정글러 중 하나다. 나쁘지 않은 기본 능력치와 뛰어난 스킬셋으로 일방적으로 이니시에이팅을 가하고 적과의 난전을 유도하는 데에 특화되어 있다. 브루저 포지션이지만 AD 캐리 역할군과도 꽤 비슷하게 운용할 수도 있어서, 신 짜오가 잘 성장하면 게임이 진삼국무쌍이 된다는 말이 있을 정도로 우수한 초중반 캐리력과 스노우볼링 능력을 지니고 있다.</p>
+<a href="#popup5"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup5" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc5();">
+      	<input type="text" id="lineq5">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+<div class="cham" id="c0101">
+	<div class="chamn"><h1>하이머딩거, 위대한 발명가</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/champion-heimerdinger-dragontrainer-splash.jpg" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>포탑을 이용하여 공간을 장악하고 지속적인 견제를 통해 상대방을 압박하는 공성전형 AP 메이지 챔피언이다.<br>
+강력한 초반 라인전 능력을 바탕으로 상대의 성장을 방해하는 데에 특화된 안티 캐리의 성향이 강한 마법사 챔피언으로, 주 포지션은 긴 라인에서의 포탑의 장점을 살려 근접 챔피언을 쉽게 압박할 수 있는 탑이지만 강력한 초반 라인전과 난전 능력을 보고 바텀 비원딜로도 기용되며 아주 소수의 유저가 미드로 사용하기도 한다</p>
+<a href="#popup6"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup6" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc6();">
+      	<input type="text" id="lineq6">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+<div class="cham" id="c0110">
+	<div class="chamn"><h1>판테온, 불굴의 창</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/champion-pantheon-splash-classic.jpg" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>초중반 주도권을 가져오는 데에 특화된 안티 캐리형 AD 캐스터 겸 세미 브루저.<br>
+쉽게 강화 스킬 조건을 맞출 수 있는 패시브를 바탕으로 강화시킨 혜성의 창을 통한 높은 견제력과 맞딜 능력을 지니고 있으며, 그러면서도 피해량은 초반부터 다른 챔피언들의 주력기를 능가하는 피해량을 지닌다. 여기에 무적기인 방패 돌격을 통한 강력한 단발성 딜교환 능력, 주도권을 다른 라인에까지 행사할 수 있는 거대 유성 등 게임 초중반에 영향력을 행사할 수 있는 장점들로 무장했다.<br>강력한 라인전 능력과 쉽고 직관적인 조작 때문에 입문 난이도가 낮은 편이라 뉴비들이 게임을 익히기 좋은 챔피언으로 뽑힌다. 궁극기는 다른 로밍형 챔피언들과 비교해도 특히나 간편한 로밍이 가능하기에 뉴비들이 어려워하는 로밍각이나 합류 타이밍 등을 익히기에도 적합하다.</p>
+<a href="#popup7"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup7" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc7();">
+      	<input type="text" id="lineq7">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+<div class="cham" id="c0111">
+	<div class="chamn"><h1>세트, 우두머리</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/champion-sett-splash.jpg" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>기동성이 부족하지만, 딜링과 탱킹 양면으로 균형잡힌 능력치와 정직하게 난투전을 펼치는 역할군인 돌격형 전사 역할군 챔피언.<br>
+강펀치(W)의 <span>압도적인 광역 고정 피해량과 보호막</span>, 주먹다짐(Q)과 패시브가 가져다 주는 딜과 유지력의 조화, 적절한 CC기에 돌격형 전사답게 탄탄한 기본 스펙까지, 전체적으로 세트의 라인전은 굉장히 견고하다. 근접하면 파괴적인 딜교환을 자랑하고, 일방적인 견제도 버티고 기회를 볼 능력이 있다. 초중반 난전과 주도권을 중시하는 메타에서 굉장히 강하며, 그럼에도 불구하고 근래 출시된 챔피언들 중에서도 <span>손꼽히게 난이도가 쉽다. </span>라인전이 끝난 이후의 교전에서의 운용도 부담은 적고, 돌아오는 리턴이 큰, 그야말로 로우리스크 하이리턴의 표본과 같은 챔피언. 프로씬에서는 비슷한 시기 리메이크된 볼리베어와 함께 힘만 세고 유틸리티가 부족한 같은 역할군 내 다른 챔피언들의 경쟁력을 떨어뜨렸다고 평가받는다.
+</p>
+<a href="#popup8"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup8" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc8();">
+      	<input type="text" id="lineq8">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+<div class="cham" id="c1000">
+	<div class="chamn"><h1>탈리야, 바위술사</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/animated-taliyah.gif" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>중장거리 카이팅과 누킹 모두에 능하고 로밍에 강점이 있는 광역형 마법사 챔피언.<br>빠른 라인 클리어와 기동성, 그리고 적의 위치를 강제로 이동시킬 수 있는 하드 CC기를 원거리에서 광역으로 3레벨부터 넣을 수 있다는 점이다. 최상급 CC기인 에어본을 적용시키며 적의 위치를 옮겨오는 넉백기를 일반기로만 가지고 있어도 위협적인데 이를 별다른 조건도 없이 사용할 수 있다는 것은 탈리야의 변수 창출 능력을 큰 폭으로 강화시켜준다.</p>
+<a href="#popup9"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup9" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc9();">
+      	<input type="text" id="lineq9">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+<div class="cham" id="c1001">
+	<div class="chamn"><h1>코그모, 심연의 아귀</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/champion-kogmaw-battlecast-splash.jpg" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>원거리 역할군의 장점과 단점을 극단적으로 부풀린 듯한 챔피언.<br> 코그모의 사거리와 DPS는 비교군 전체를 통틀어 최상위권에 속하며, 한타에서 원거리 DPS에게 가장 중요하다고 할 수 있는 저 두 장점이 바텀 AD로서는 초반부터 후반까지 계속 유지되고, AP 빌드는 후반에 특출나게 만개한다. 또한 상황과 조합이 뒷받침될 때 특별한 존재감을 발산하며 비교군 중에서도 단연 압도적인 한타 캐리력을 보여준다. 특히 원딜 코그모는 특정 시간대의 약점이 없다는 면에서 대부분의 캐리형 원딜과 차별화되며, 초반 라인전 스노우볼링 또는 중반 난전 메타일지라도 경우에 따라 조커 카드로 기용될 수 있다.</p>
+<a href="#popup10"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup10" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc10();">
+      	<input type="text" id="lineq10">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+<div class="cham" id="c1010">
+	<div class="chamn"><h1>그레이브즈, 무법자</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/champion-graves-battle-academia-splash.jpg" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>압도적인 평타 화력과 암살자도 능가하는 스킬 딜링, 자체적인 방어력 증가 옵션을 바탕으로 한 뛰어난 전투 지속력까지 갖춘 원거리 딜러<Br>그레이브즈의 파밍과 캠프 처리 속도는 타 정글러들과 비교를 불허할 만큼 빠르고, 생존력도 그럭저럭 완성 단계이다보니 일반적인 원거리 딜러와 다르게 아군의 보호가 절실하지 않다. 오히려 초반 전투력이 강력하고 정글 내 주도권을 잡기 쉽다보니 사실상 성장형 육식 정글러라 봐도 무방할 수준. 원거리 딜러라고는 믿기지 않을 만큼 강력한 스킬 딜링과 전투 지속력을 지니고 있으면서도, 근본은 원거리 딜러인지라 기본 공격을 바탕으로 한 지속 딜링도 뛰어나다. 안정적으로 성장한 그레이브즈의 파괴력은 매우 뛰어나</p>
+<a href="#popup11"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup11" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc11();">
+      	<input type="text" id="lineq11">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+<div class="cham" id="c1011">
+	<div class="chamn"><h1>사미라, 사막의 장미</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/champion-samira-psyops-splash.jpg" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>날카로운 진입 능력과 궁극기로 인한 파괴적인 광역 화력 투사를 주 무기로 삼는 원거리 딜러. 사거리에 따라 달라지는 공격 방식, 독특한 스타일 시스템이 눈에 띈다.<br>
+
+일부 하이퍼 캐리형 원거리 딜러에게 요구되는 <span>인파이팅</span>과 그로 얻는 보상을 극단적으로 강화한 챔피언이다. 비슷한 리스크를 짊어지는 챔피언들이 대개 은신과 뛰어난 카이팅 능력을 가졌고, 어그로 핑퐁이 요구되는 것에 비해 진입각을 재다가 들어가 <span>적진 중간을 파고들어</span> 헤집어놓는 것이 주된 게임 플레이 방식.</p>
+<a href="#popup12"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup12" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc12();">
+      	<input type="text" id="lineq12">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+<div class="cham" id="c1100">
+	<div class="chamn"><h1>피들스틱, 오래된 공포</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/champion-fiddlesticks-surprise-splash.jpg" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>기습형 근중거리 마법사. 라이엇이 공인한 주 포지션은 정글러이다.<br>허수아비로 적들을 속이고 강력한 피해를 광역으로 가하는 까마귀 폭풍과 공포 및 침묵이라는 강력한 CC기로 6레벨 이후 한타에서 까마귀 폭풍을 통한 압도적인 강세를 보이는 성장형 정글러이다. 보통 마법사 챔피언들은 아무리 광역형 마법사라도 적절한 거리를 두고 딜을 하는데, 피들스틱은 궁극기를 통해 적진 한복판으로 뛰어들어 딜을 퍼붓는 이질적인 플레이 방식을 가지고 있다. </p>
+<a href="#popup13"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup13" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc13();">
+      	<input type="text" id="lineq13">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+<div class="cham" id="c1101">
+	<div class="chamn"><h1>드레이븐, 화려한 처형자</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/animated-draven.gif" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>핵심 딜 스킬의 독특한 매커니즘과 골드 스노우볼에 직결되는 패시브, 그로 인한 무지막지한 난이도로 유명한 원딜 챔피언.<br> 한 발 한 발이 엄청나게 묵직하고 생명력 흡수의 효율 또한 그에 못지않게 뛰어난 회전 도끼 덕분에 라인전 딜교환이 무척 강력하며 적 챔피언을 처치하면 패시브로 추가 골드까지 얻기 때문에 공격적인 스노우볼링에 특화되어 있다. 이동기가 없고 사거리가 짧으면서 딜 스킬이 무빙을 강제하는 스킬 구성상 한타 때는 웬만큼 드레이븐 숙련도가 높은 유저가 잡더라도 제 위력을 100% 발휘하기 힘든 편.</p>
+<a href="#popup14"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup14" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc14();">
+      	<input type="text" id="lineq14">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+<div class="cham" id="c1110">
+	<div class="chamn"><h1>제드, 그림자의 주인</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/animated-zed-odyssey-intro.gif" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>그림자를 이용해 스킬을 중복 사용하며 누킹을 한다는 컨셉의 AD 캐스터. 주 포지션은 미드.<br>막강한 딜링 능력을 기반으로 라인전을 압도하고 주도권을 쥐고, 스플릿 푸시를 하는 것이 제드의 기본 운영.<br>
+그림자의 스킬 복사를 이용한 광역 딜링과 순간적인 위치 이동을 이용한 어그로 핑퐁 플레이로 한타에서도 활약할 수 있음.</p>
+<a href="#popup15"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup15" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc15();">
+      	<input type="text" id="lineq15">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+<div class="cham" id="c1111">
+	<div class="chamn"><h1>올라프,광전사</h1></div>
+	<div class="chamdiv">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/champion-olaf-brolaf-splash.jpg" alt="" style="width: 90%; margin: 50px;">
+<div class="intr"><p>무척 강력한 초중반 전투력과 대인전, 라그나로크가 주는 저지 불가 효과를 통한 스노우볼링을 자랑으로 삼는 돌격형 전사챔피언. 주 포지션은 정글과 탑.<br> 초중반 먹이사슬 최상위권에 위치한 챔피언이다. 그렇기 때문에 대부분의 유저들에게 초반에 강한 챔피언을 고르라고 하면 올라프가 결코 빠지지 않는다. 초반 맞싸움이 약한 챔피언들은 도끼를 한 번 맞는 순간 1레벨부터 선취점을 허용하기까지 할 정도로 올라프의 초중반 전투력은 어지간한 챔피언과는 비교를 불허하며, 패시브와 버티기가 어우러진 전투 지속력 또한 매우 뛰어나다. 
+</p>
+<a href="#popup16"><div style="z-index: 99; border-radius: 60px; padding-top: 60px; width:500px; height: 100px; background-color: dimgray;">간단한 퀴즈를 풀어보세요</div></a>
+</div>
+<div id="popup16" class="overlay">
+  <div class="popup">
+    <h2>이 챔피언은 어떤라인일까요</h2>
+    <a class="close" href="#">×</a>
+    <div class="content">
+      <form id="form" action="챔프추천.html" onsubmit="wc16();">
+      	<input type="text" id="lineq16">
+      	<input type="submit" value="제출">
+      </form>
+    </div>
+  </div>
+</div>
+</div></div>
+</div>
+
+
+
+
+
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/포로1.html.jpg" alt="" style="float:right; width: 50%;" id="poro1">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/포로2.jpg" alt="" style="float:right; width: 50%; display: none;" id="poro2">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/포로5.png" alt="" style="float:right; width: 50%; display: none;" id="poro3">
+<img src="프로그래밍언어및실습_1-1학기과제-사진파일모음/포로4.jpg" alt="" style="float:right; width: 50%; display: none;" id="poro4">
+<br><br><br><br><br><br><br><br><br>
+<pre style="font-family: '맑은 고딕'; font-size: 42px; margin:100px;" id="poro11">본인의 실력이
+어느정도라고
+생각하십니까
+</pre>
+<button class="ret" id="poro111" onclick="x=0;showX();"><p class="cb">응애 나<br>애기뉴비</p></button>
+<button class="ret" id="poro1111" onclick="x=1;showX();"><p class="cb">이제 좀<br>익숙하다</p></button>
+
+<pre style="font-family: '맑은 고딕'; font-size: 42px; margin:100px; display: none;" id="poro22">원하는 플레이
+스타일은
+무엇입니까
+</pre>
+<button class="ret" id="poro222" onclick="x=0;showX(); " style=" display:none;"><p class="cb">초반에 약하지만<br>후반에 좋음</p></button>
+<button class="ret" id="poro2222" onclick="x=1;showX();" style=" display:none;"><p class="cb">초반에 강하지만<br>후반에 힘이 빠짐</p></button>
+
+<pre style="font-family: '맑은 고딕'; font-size: 42px; margin:100px; display: none;" id="poro33">본인의
+성향을
+알려주세요
+</pre>
+<button class="ret" id="poro333" onclick="x=0;showX(); " style=" display:none;"><p class="cb">남들 다하는건<br>왠지 하기싫다</p></button>
+<button class="ret" id="poro3333" onclick="x=1;showX();" style=" display:none;"><p class="cb">다들하는건<br>좋다는 증거</p></button>
+
+<pre style="font-family: '맑은 고딕'; font-size: 42px; margin:100px; display: none;" id="poro44">여기저기
+돌아다니는걸
+좋아하십니까
+</pre>
+<button class="ret" id="poro444" onclick="x=0;showX(); " style=" display:none;"><p class="cb">여기저기 돌아다니면서<br>영향을 끼치고싶다</p></button>
+<button class="ret" id="poro4444" onclick="x=1;showX();" style=" display:none;"><p class="cb">내 라인에나<br>집중하자</p></button>
+
+</body>
+</html>
+<!--0000 애니  0001 트리스타나  0010 탈론  0011 이즈리얼 0100 신짜오  0101 하이머딩거 0110 판테온  0111 세트 1000 탈리야  1001 코그모 1010 그레이브즈 1011 사미라 1100 피들스틱  1101 드레이븐  1110 제드  1111 올라프-->
